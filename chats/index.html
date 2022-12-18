@@ -1,0 +1,46 @@
+{% extends "chats/base.html" %}
+
+{% block title %} Chats {% endblock %}
+
+{% block pagespecific%}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+
+  <h1>Group Chats</h1>
+  <hr>
+  <br>
+
+  <div id="container">
+      {% for user in users %}
+      <div class="media">
+        <div class="media-left">
+          <img src="{{ user.img }}" class="media-object" style="width:40px; border-radius: 90%; " >
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">{{ user.name }} : <span class="badge badge-secondary">{{ user.time }}</span></h4>
+          <p>{{ user.msg }}</p>
+        </div>
+
+        {% endfor %}
+      </div>
+
+
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Enter Message" aria-describedby="basic-addon2">
+        <span class="input-group-addon enter" id="basic-addon2">Enter</span>
+
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}

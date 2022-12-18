@@ -1,0 +1,23 @@
+{% extends "chats/base.html" %}
+
+{% block title %} Groups {% endblock %}
+
+{% block content %}
+
+<div class="container">
+    {% for group in all_groups %}
+        <div class="card">
+            <ul class="list-group list-group-flush">
+                <a href="/chats/{{ group.split|join:' ' }}/"> <li class="list-group-item"> {{group}} </li> </a>
+
+            </ul>
+</div>
+<!--        <li><a href="/chats/{{ group.split|join:'' }}/"> {{group}} </a></li>-->
+        <br>
+    {% endfor %}
+
+</div>
+
+
+
+{% endblock %}
